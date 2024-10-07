@@ -16,6 +16,7 @@ const login = async (user) => {
             {
                 user_name: dbUser.user_name,
                 role: dbUser.role,
+                id: dbUser.id,
             },
             process.env.TOKEN_SECRET,
             {
