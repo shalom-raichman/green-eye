@@ -1,30 +1,28 @@
+const { createUser } = require("../sevices/userService");
 
 const register = async (req, res) => {
     try {
-        
+        await createUser(req.body);
+        res.status(201).json({
+            msg: "user created",
+        });
     } catch (err) {
-        
+        res.status(400).json(err.message);
     }
-}
+};
 
 const getProfile = async (req, res) => {
     try {
-        
-    } catch (err) {
-        
-    }
-}
+    } catch (err) {}
+};
 
 const setSettings = async (req, res) => {
     try {
-        
-    } catch (err) {
-        
-    }
-}
+    } catch (err) {}
+};
 
 module.exports = {
     register,
     getProfile,
-    setSettings
-}
+    setSettings,
+};
