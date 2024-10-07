@@ -1,0 +1,9 @@
+      -- GreenEye --
+
+/auth - login - logout
+
+/user - register 
+
+/GreenEye --- /status/:id /createPoll /getMyNotification
+
+/settingUpdate --- /reply /delete
