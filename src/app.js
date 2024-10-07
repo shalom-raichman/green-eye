@@ -1,8 +1,10 @@
 const exp = require("express");
 const dotenv = require("dotenv");
+const { connectToMongoo } = require("./config/dbConfig");
 
 const app = exp();
 dotenv.config();
+connectToMongoo();
 const PORT = process.env.PORT || 1415;
 
 app.use(exp.json());
