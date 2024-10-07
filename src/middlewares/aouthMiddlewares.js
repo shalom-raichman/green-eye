@@ -1,11 +1,11 @@
 const onlyCommanders = async (req, res, next) => {
     try {
-    } catch (error) {}
+    } catch (err) {}
 };
 
 const onlySoldiersAndCommanders = async (req, res, next) => {
     try {
-    } catch (error) {}
+    } catch (err) {}
 };
 
 module.exports = {
