@@ -18,6 +18,11 @@ const deletePoll = async (req, res) => {
     } catch (err) {}
 };
 
+const getPollById = async (req, res) => {
+    try {
+    } catch (err) {}
+};
+
 module.exports = {
     createPoll,
     getNotifications,
