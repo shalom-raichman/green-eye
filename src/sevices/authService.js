@@ -8,7 +8,7 @@ const login = async (user) => {
 
         if (!dbUser) throw new Error("user not found");
 
-        if (!(await bcrypt.compare(user.passwrod, dbUser.password))) {
+        if (!(await bcrypt.compare(user.password, dbUser.password))) {
             throw new Error("wrong password");
         }
 
@@ -16,7 +16,7 @@ const login = async (user) => {
             {
                 user_name: dbUser.user_name,
                 role: dbUser.role,
-                id: dbUser.id,
+                id: dbUser._id,
             },
             process.env.TOKEN_SECRET,
             {
@@ -26,6 +26,7 @@ const login = async (user) => {
         return token;
     } catch (err) {
         console.log(err);
+        throw err
     }
 };
 
