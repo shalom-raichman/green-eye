@@ -8,34 +8,31 @@ const {
  * @swagger
  * /auth/login:
  *   post:
- *     summary: Login to the system.
- *     description: Login to the system.
+ *     summary: login a user
+ *     tags: [login]
  *     requestBody:
+ *       required: true
  *       content:
  *         application/json:
  *           schema:
- *             user:
- *               type: object
- *               properties:
- *                 user_name:
- *                   type: string
- *                   description: no description
- *                 password:
- *                   type: string
- *                   description: no description
- *     example:
- *         id: d5fE_asz
- *         title: The New Turing Omnibus
- *         author: Alexander K. Dewdney
- *         finished: false
- *         createdAt: 2020-03-10T04:05:06.157Z
+ *             type: object
+ *             properties:
+ *               user_name:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *               role:
+ *                 type: String,
+ *                 enum: ["soldier", "commander"]
+ *           example:
+ *             user_name: "johndoe"
+ *             password: "secretpassword123"
+ *             area: "center"
  *     responses:
- *       '201':
- *         description: A successful response
- *       '404':
- *         description: Employee not found
- *       '500':
- *         description: Internal server error
+ *       201:
+ *         description: User created successfully
+ *       400:
+ *         description: Bad request
  */
 router.post("/login", login);
 
